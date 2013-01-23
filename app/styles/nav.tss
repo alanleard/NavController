@@ -1,0 +1,23 @@
+"#navView": {
+	bottom:0,
+	height:50,
+	left:0,
+	right:0,
+	layout:'horizontal',
+	backgroundColor:'white'
+},
+"#container":{
+	bottom:50,
+	top:0,
+	left:0,
+	right:0
+},
+".button":{
+	top:0,
+	height:50,
+	width:"25%",
+	borderColor:'#000',
+	borderWidth:1,
+	textAlign:'center',
+	color:'#000'
+}

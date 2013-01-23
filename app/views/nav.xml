@@ -1,0 +1,21 @@
+<Alloy>
+
+	<Window>
+
+		<View id="navView">
+			
+			<Label id="window1" text="Window 1" class="button" onClick="open" onTouchstart="select" onTouchend="deselect"/>
+				
+			<Label id="window2" text="Window 2" class="button" onClick="open" onTouchstart="select" onTouchend="deselect"/>
+				
+			<Label id="window3" text="Window 3" class="button" onClick="open" onTouchstart="select" onTouchend="deselect"/>
+				
+			<Label id="window4" text="Window 4" class="button" onClick="open" onTouchstart="select" onTouchend="deselect"/>	
+		
+		</View>
+		
+		<View id="container"/>
+	
+	</Window>
+
+</Alloy>
