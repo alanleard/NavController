@@ -1,6 +1,5 @@
 <Alloy>
 	<View class="container">
 		<Label>Window 2</Label>	
-		<ImageView id="image"/>
 	</View>
 </Alloy>

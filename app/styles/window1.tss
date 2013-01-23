@@ -2,7 +2,4 @@
 	backgroundColor: "purple",
 	layout: "vertical",
 	persist:true
-},
-"#image":{
-	image:"http://www.appcelerator.com.s3.amazonaws.com/web/forms/titanium-device-graphic.png"
 }

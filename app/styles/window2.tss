@@ -1,7 +1,5 @@
 ".container": {
 	backgroundColor: "green",
-	layout:"vertical" 
-},
-"#image":{
-	image:"http://www.appcelerator.com.s3.amazonaws.com/web/forms/titanium-device-graphic.png"
+	layout:"vertical",
+	persist:false
 }
