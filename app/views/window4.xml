@@ -1,5 +1,5 @@
 <Alloy>
-	<View layout="vertical" class="container">
+	<View class="container">
 		<Label>Window 4</Label>
 	</View>
 </Alloy>

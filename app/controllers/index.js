@@ -1,49 +1,30 @@
-//****MULTI WINDOW NAV CONTROLLER USE STATIC MULTI WINDOWS******
-// function open(e){ 
-	// var arg = e.source.id	
-	// if(Alloy.Globals.win[arg]){
-		// if(Alloy.Globals.win[arg].visible == false){
-			// Alloy.Globals.win[arg].show();
-			// Alloy.Globals.win[Alloy.Globals.currentWin].hide();
-			// Alloy.Globals.currentWin = arg;
-		// }
-	// } else {
-		// Alloy.Globals.win[arg] = Alloy.createController(arg).getView();
-		// Alloy.Globals.win[arg].open();
-		// Alloy.Globals.win[arg].visible = true;
-		// Alloy.Globals.win[Alloy.Globals.currentWin].hide();
-		// Alloy.Globals.currentWin = arg;
-	// }
-// }
-
-// ****MULTI WINDOW NAV CONTROLLER USING SINGLE WINDOWS******
-// function open(e){
-	// var arg = e.source.id
-	// if(arg != Alloy.Globals.currentWin){
-		// Alloy.Globals.win[arg] = Alloy.createController(arg).getView();
-		// Alloy.Globals.win[arg].open();
-		// Alloy.Globals.win[Alloy.Globals.currentWin].close();
-		// Alloy.Globals.win[Alloy.Globals.currentWin] = null;
-		// Alloy.Globals.currentWin = arg;
-	// }
-// }
-
-//*****SINGLE NAV CONTROLLER WINDOW AND VIEWS********
-
 var win = {};
 var currentWin = null;
 
 function open(e){
 	var arg = e.source?e.source.id:e;
 	if(arg != currentWin){
-		win[arg] = Alloy.createController(arg).getView();
-		
-		$.container.add(win[arg]);
-		if(currentWin){
-			$.container.remove(win[currentWin]);
-			win[currentWin] = null;
+		if(!win[arg]){
+			win[arg]={};
+			win[arg].obj = Alloy.createController(arg).getView();
+			win[arg].persist = win[arg].obj.persist?win[arg].obj.persist:false;
+			$.container.add(win[arg].obj);
+		} else {
+			win[arg].obj.show();
 		}
-		currentWin = arg;
+		
+		if(currentWin){
+			if(win[currentWin].persist){
+				win[currentWin].obj.hide();
+			} else {
+				$.container.remove(win[currentWin].obj);
+				win[currentWin] = null;
+			}
+			currentWin = arg;
+		} else {
+			currentWin = arg;
+		}
+		
 	}
 }
 exports.open = open;

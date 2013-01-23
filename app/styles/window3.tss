@@ -1,3 +1,4 @@
 ".container": {
-	backgroundColor: "blue"
+	backgroundColor: "blue",
+	layout: "vertical" 
 }
