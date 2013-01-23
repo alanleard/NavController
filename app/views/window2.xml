@@ -1,0 +1,8 @@
+<Alloy>
+	<View layout="vertical" class="container">
+		<!-- ADD IF USING MULTI WINDOW NAV CONTROLLER
+		<Require src="navController"/>
+		-->
+		<Label>Window 2</Label>	
+	</View>
+</Alloy>
